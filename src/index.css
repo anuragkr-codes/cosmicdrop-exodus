@@ -1,0 +1,49 @@
+/*  Spacing System (px)
+//  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+//  FONT SIZE SYSTEM (px)
+//  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 /160 */
+
+:root {
+  --color-brand-400: #bed0f4;
+  --color-brand-500: #a8c1f1;
+  --color-brand-600: #92b1ed;
+  --color-brand-700: #758ebe;
+  --color-brand-800: #586a8e;
+  --color-brand-850: #495977;
+
+  /* greys */
+  --color-navy-400: #73777d;
+  --color-navy-500: #444952;
+  --color-navy-600: #151c27;
+
+  --color-pink-400: #fbb1b1;
+  --color-pink-500: #fa9797;
+  --color-pink-600: #f97d7d; /* primary */
+
+  --color-blue-400: #91b2f0;
+  --color-blue-500: #6c99eb;
+  --color-blue-600: #477fe6;
+
+  --color-skin-400: #faf2ec;
+  --color-skin-500: #f9eee6;
+  --color-skin-600: #f7eae0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  overflow-x: hidden;
+}
