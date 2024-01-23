@@ -1,4 +1,5 @@
 import Landing from "./components/Landing";
+import Spacer from "./components/Spacer";
 
 //Smooth Scroll
 import Lenis from "@studio-freight/lenis";
@@ -18,7 +19,12 @@ requestAnimationFrame(raf);
 //Smooth Scroll Done
 
 function App() {
-  return <Landing />;
+  return (
+    <>
+      <Landing />
+      <Spacer />
+    </>
+  );
 }
 
 export default App;

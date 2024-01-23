@@ -43,7 +43,112 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   line-height: 1;
   overflow-x: hidden;
+}
+
+.svg-pin1 {
+  position: absolute;
+  bottom: 20%;
+  left: 45%;
+  animation: showPin1 linear forwards;
+}
+
+.svg-pin2 {
+  position: absolute;
+  bottom: 25%;
+  left: 35%;
+  animation: showPin2 linear forwards;
+}
+
+.svg-pin3 {
+  position: absolute;
+  bottom: 25%;
+  left: 55%;
+  animation: showPin3 linear forwards;
+}
+
+.svg-pin4 {
+  position: absolute;
+  bottom: 22%;
+  left: 60%;
+  animation: showPin4 linear forwards;
+}
+
+.svg-pin5 {
+  position: absolute;
+  bottom: 18%;
+  left: 70%;
+  animation: showPin5 linear forwards;
+}
+
+.svg-pin6 {
+  position: absolute;
+  bottom: 24%;
+  left: 74%;
+  animation: showPin6 linear forwards;
+}
+
+.svg-pin7 {
+  position: absolute;
+  bottom: 15%;
+  left: 85%;
+  animation: showPin7 linear forwards;
+}
+
+.svg {
+  opacity: 0;
+  animation-timeline: view(60vh 0);
+}
+
+@keyframes showPin1 {
+  to {
+    opacity: 1;
+    transform: rotateY(360deg);
+    bottom: 10%;
+  }
+}
+
+@keyframes showPin2 {
+  to {
+    opacity: 1;
+    transform: rotateY(360deg);
+    bottom: 15%;
+  }
+}
+@keyframes showPin3 {
+  to {
+    opacity: 1;
+    transform: rotateY(360deg);
+    bottom: 15%;
+  }
+}
+@keyframes showPin4 {
+  to {
+    opacity: 1;
+    transform: rotateY(360deg);
+    bottom: 12%;
+  }
+}
+@keyframes showPin5 {
+  to {
+    opacity: 1;
+    transform: rotateY(360deg);
+    bottom: 8%;
+  }
+}
+@keyframes showPin6 {
+  to {
+    opacity: 1;
+    transform: rotateY(360deg);
+    bottom: 14%;
+  }
+}
+@keyframes showPin7 {
+  to {
+    opacity: 1;
+    transform: rotateY(360deg);
+    bottom: 5%;
+  }
 }
