@@ -99,7 +99,7 @@ const CTADiv = styled.div`
 const CTATextDiv = styled.div`
   margin-top: 20vh;
 
-  font-size: clamp(3.2rem, 8vw, 14rem);
+  font-size: clamp(3.2rem, 10vw, 14rem);
   letter-spacing: -0.1vw;
   font-weight: 500;
   text-transform: uppercase;
@@ -118,8 +118,8 @@ const ButtonBox = styled.div`
 
 const CTAButton = styled.div`
   position: absolute;
-  top: 54%;
-  left: 22%;
+  top: 58%;
+  left: 62%;
   transform: translate(-50%, -50%);
 
   color: #fff;
@@ -144,31 +144,31 @@ const CTAButton = styled.div`
   @media (max-width: 67.5em) {
     font-size: 2.8rem;
     top: 50%;
-    left: 20%;
+    left: 62%;
   }
 
   @media (max-width: 57.5em) {
     font-size: 2.6rem;
     top: 46%;
-    left: 18%;
+    left: 62%;
   }
 
   @media (max-width: 45em) {
     font-size: 2.2rem;
-    top: 42%;
-    left: 20%;
+    top: 40%;
+    left: 62%;
   }
 
   @media (max-width: 41.25em) {
     font-size: 2rem;
-    top: 40%;
-    left: 22%;
+    top: 39%;
+    left: 62%;
   }
 
   @media (max-width: 34.3em) {
     font-size: 1.8rem;
     top: 36%;
-    left: 24%;
+    left: 62%;
   }
 `;
 
@@ -200,7 +200,10 @@ export default function Landing() {
         <HeroTextDiv>Placeholder</HeroTextDiv>
       </HeroDiv>
       <CTADiv>
-        <CTATextDiv>Essentials beyond reach?</CTATextDiv>
+        <CTATextDiv>
+          <div>Essentials</div>
+          <div>beyond reach?</div>
+        </CTATextDiv>
       </CTADiv>
       <ButtonDiv>
         <ButtonBox>
