@@ -11,8 +11,6 @@ const Section = styled.section`
     #060a13 57.86%,
     #000 100%
   );
-
-  position: relative;
 `;
 
 const BackgroundImgDiv = styled.div`
@@ -46,7 +44,6 @@ const HeroDiv = styled.div`
   color: #fff;
   position: fixed;
   top: 0;
-  z-index: 1;
 
   display: flex;
   justify-content: center;
