@@ -91,6 +91,10 @@ const ButtonDiv = styled.div`
   margin-left: 1rem;
 `;
 
+const ButtonBox = styled.div`
+  display: inline-block;
+`;
+
 const CTAButton = styled.div`
   position: absolute;
   top: 54%;
@@ -107,6 +111,14 @@ const CTAButton = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 1rem;
+
+  transition: background-color 0.2s;
+
+  cursor: pointer;
+  &:hover {
+    background-color: #ffad31;
+    color: #080c16;
+  }
 
   @media (max-width: 67.5em) {
     font-size: 2.8rem;
@@ -170,9 +182,12 @@ export default function Landing() {
         <CTATextDiv>ESSENTIALS BEYOND REACH?</CTATextDiv>
       </CTADiv>
       <ButtonDiv>
-        <CTAButton className="btn-cta">
-          <span>Not anymore</span> <MdOutlineArrowOutward />
-        </CTAButton>
+        <ButtonBox>
+          <CTAButton className="btn-cta">
+            <span>Not anymore</span> <MdOutlineArrowOutward />
+          </CTAButton>
+        </ButtonBox>
+        {/* <ButtonDark className="btn-cta">Not anymore</ButtonDark> */}
       </ButtonDiv>
     </Section>
   );
