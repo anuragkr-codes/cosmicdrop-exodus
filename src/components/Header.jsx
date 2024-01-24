@@ -16,13 +16,24 @@ const HeaderElement = styled.header`
 `;
 
 const FeatureLinkDiv = styled.div`
-  font-size: 3rem;
+  /* font-size: 3rem; */
+  /* font-size: 2.4vw; */
+  font-size: clamp(2rem, 2.4vw, 3rem);
   font-weight: 300;
+
+  @media (max-width: 41.25em) {
+    display: none;
+  }
 `;
 
 const LogoDiv = styled.div`
-  font-size: 3.4rem;
+  font-size: clamp(2.2rem, 2.6vw, 3.2rem);
   font-weight: 300;
+  font-weight: 300;
+
+  @media (max-width: 41.25em) {
+    font-weight: 400;
+  }
 `;
 
 export default function Header() {
