@@ -1,3 +1,4 @@
+import Header from "./components/Header";
 import Landing from "./components/Landing";
 import Spacer from "./components/Spacer";
 
@@ -21,6 +22,7 @@ requestAnimationFrame(raf);
 function App() {
   return (
     <>
+      <Header />
       <Landing />
       <Spacer />
     </>

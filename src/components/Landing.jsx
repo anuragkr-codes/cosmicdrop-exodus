@@ -38,10 +38,6 @@ const HeroDiv = styled.div`
   height: 100vh;
   width: 100vw;
   /* font-size: 10vw; */
-  font-size: clamp(4.2rem, 10vw, 16rem);
-  letter-spacing: -0.1vw;
-  font-weight: 500;
-  color: #fff;
   position: fixed;
   top: 0;
 
@@ -52,8 +48,31 @@ const HeroDiv = styled.div`
   animation-timeline: view(0 100vh);
 `;
 
+const bgAnimation = keyframes`
+    to{
+        background-position: right;
+    }
+`;
+
 const HeroTextDiv = styled.div`
   margin-top: 26vh;
+
+  font-size: clamp(4.2rem, 10vw, 16rem);
+  letter-spacing: -0.1vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+
+  background: linear-gradient(
+    151deg,
+    rgba(255, 221, 170, 0.9697128851540616) 27%,
+    rgba(167, 255, 241, 0.9753151260504201) 50%,
+    rgba(255, 155, 244, 0.9220938375350141) 75%
+  );
+  background-clip: text;
+  color: transparent;
+  background-size: 400%;
+  animation: ${bgAnimation} 10s infinite alternate;
 `;
 
 const show = keyframes`
@@ -65,10 +84,6 @@ const show = keyframes`
 const CTADiv = styled.div`
   height: 100vh;
   width: 100vw;
-  font-size: clamp(3.2rem, 8vw, 14rem);
-  letter-spacing: -0.1vw;
-  font-weight: 500;
-  color: #fff;
 
   display: flex;
   margin-left: 1rem;
@@ -83,6 +98,12 @@ const CTADiv = styled.div`
 
 const CTATextDiv = styled.div`
   margin-top: 20vh;
+
+  font-size: clamp(3.2rem, 8vw, 14rem);
+  letter-spacing: -0.1vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
 `;
 
 const ButtonDiv = styled.div`
@@ -176,10 +197,10 @@ export default function Landing() {
         ))}
       </BackgroundImgDiv>
       <HeroDiv>
-        <HeroTextDiv>PLACEHOLDER</HeroTextDiv>
+        <HeroTextDiv>Placeholder</HeroTextDiv>
       </HeroDiv>
       <CTADiv>
-        <CTATextDiv>ESSENTIALS BEYOND REACH?</CTATextDiv>
+        <CTATextDiv>Essentials beyond reach?</CTATextDiv>
       </CTADiv>
       <ButtonDiv>
         <ButtonBox>
@@ -187,7 +208,6 @@ export default function Landing() {
             <span>Not anymore</span> <MdOutlineArrowOutward />
           </CTAButton>
         </ButtonBox>
-        {/* <ButtonDark className="btn-cta">Not anymore</ButtonDark> */}
       </ButtonDiv>
     </Section>
   );
