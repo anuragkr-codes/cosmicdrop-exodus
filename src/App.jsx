@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Landing from "./components/Landing";
+import Features from "./components/Features";
 import Spacer from "./components/Spacer";
 
 //Smooth Scroll
@@ -24,6 +25,7 @@ function App() {
     <>
       <Header />
       <Landing />
+      <Features />
       <Spacer />
     </>
   );

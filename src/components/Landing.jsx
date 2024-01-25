@@ -4,6 +4,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Section = styled.section`
   height: 300vh;
+  width: 100%;
   background: linear-gradient(
     180deg,
     #0e1322 0%,
@@ -99,7 +100,7 @@ const CTADiv = styled.div`
 const CTATextDiv = styled.div`
   margin-top: 20vh;
 
-  font-size: clamp(3.2rem, 10vw, 14rem);
+  font-size: clamp(3.4rem, 12vw, 14rem);
   letter-spacing: -0.1vw;
   font-weight: 500;
   text-transform: uppercase;

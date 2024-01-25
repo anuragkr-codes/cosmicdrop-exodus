@@ -1,0 +1,113 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+  background: #030509;
+  color: #fff;
+  padding: 10rem;
+}
+
+@media (max-width: 58.75em) {
+  .swiper {
+    padding: 2rem;
+  }
+}
+
+.swiper-slide {
+  /* background-color: black; */
+  background: linear-gradient(
+    180deg,
+    #0e1322 0%,
+    #0a0f1b 31.73%,
+    #060a13 57.86%,
+    #000 100%
+  );
+  border-radius: 6px;
+  height: 44rem;
+  transition: background 0.4s ease, box-shadow 0.3s ease;
+}
+
+.swiper-slide:nth-child(1) {
+  border: 1px solid #ff6b00;
+}
+.swiper-slide:nth-child(2) {
+  border: 1px solid #146ef5;
+}
+.swiper-slide:nth-child(3) {
+  border: 1px solid #ed52cb;
+}
+.swiper-slide:nth-child(4) {
+  border: 1px solid #00d722;
+}
+.swiper-slide:nth-child(5) {
+  border: 1px solid #ee1d36;
+}
+
+.swiper-slide:nth-child(1):hover {
+  background: #ff6b00;
+  color: #000;
+  box-shadow: 0 0 10rem 0 #ff6b00;
+}
+.swiper-slide:nth-child(2):hover {
+  background: #146ef5;
+  color: #000;
+  box-shadow: 0 0 10rem 0 #146ef5;
+}
+.swiper-slide:nth-child(3):hover {
+  background: #ed52cb;
+  color: #000;
+  box-shadow: 0 0 10rem 0 #ed52cb;
+}
+.swiper-slide:nth-child(4):hover {
+  background: #00d722;
+  color: #000;
+  box-shadow: 0 0 10rem 0 #00d722;
+}
+.swiper-slide:nth-child(5):hover {
+  background: #ee1d36;
+  color: #000;
+  box-shadow: 0 0 10rem 0 #ee1d36;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-box {
+  height: 100%;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.feature-heading {
+  text-transform: uppercase;
+  font-size: 2.8rem;
+}
+
+.feature-list {
+  list-style: square;
+  font-size: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.view-more {
+  font-size: 1.8rem;
+}
+
+.view-more span {
+  display: inline-block;
+  margin-left: 1rem;
+  transition: transform 0.2s linear;
+}
+
+.feature-box:hover .view-more span {
+  transform: translateX(100%);
+}
