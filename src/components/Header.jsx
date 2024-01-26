@@ -5,7 +5,8 @@ const HeaderElement = styled.header`
   top: 0;
   z-index: 999;
 
-  width: 100vw;
+  /* width: 100vw; */
+  width: 100%;
   height: 8rem;
   padding: 0 2rem;
   display: flex;

@@ -2,13 +2,9 @@ import styled from "styled-components";
 import QuoteIcon from "../assets/QuoteIcon.svg";
 
 const Section = styled.section`
-  width: 100vw;
+  /* width: 100vw; */
   background: #030509;
   padding: 8rem 2rem;
-
-  @media (max-width: 41.25em) {
-    padding: 8rem 2rem;
-  }
 `;
 
 const Div = styled.div`

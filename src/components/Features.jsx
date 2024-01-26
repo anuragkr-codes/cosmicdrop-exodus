@@ -8,11 +8,9 @@ import "swiper/css/pagination";
 
 import "./styles/featuresSwiper.css";
 
-// import required modules
-import { Pagination } from "swiper/modules";
-
 const Section = styled.section`
-  width: 100vw;
+  /* width: 100vw; */
+  width: 100%;
   padding: 8rem 1rem;
   background: #030509;
   @media (max-width: 58.75em) {

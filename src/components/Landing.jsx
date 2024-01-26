@@ -4,7 +4,8 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Section = styled.section`
   height: 300vh;
-  width: 100vw;
+  /* width: 100vw; */
+  width: 100%;
   background: linear-gradient(
     180deg,
     #0e1322 0%,
@@ -38,7 +39,8 @@ const grow = keyframes`
 
 const HeroDiv = styled.div`
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
+  width: 100%;
   /* font-size: 10vw; */
   position: fixed;
   top: 0;
@@ -85,7 +87,8 @@ const show = keyframes`
 
 const CTADiv = styled.div`
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
+  width: 100%;
 
   display: flex;
   margin-left: 1rem;
@@ -120,20 +123,25 @@ const ButtonBox = styled.div`
 
 const CTAButton = styled.div`
   position: absolute;
-  top: 58%;
-  left: 62%;
+  top: 58vh;
+  left: 62vw;
   transform: translate(-50%, -50%);
 
   color: #fff;
   background-color: #060a12;
-  font-size: 3.6rem;
+  font-size: clamp(2rem, 2.6vw, 3.6rem);
+
   border: 3px solid #ffad31;
   border-radius: 3rem;
   padding: 1rem 1.4rem;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 1rem;
+
+  span {
+    white-space: nowrap;
+  }
 
   transition: background-color 0.2s;
 
@@ -144,33 +152,25 @@ const CTAButton = styled.div`
   }
 
   @media (max-width: 67.5em) {
-    font-size: 2.8rem;
-    top: 50%;
-    left: 62%;
+    top: 54vh;
   }
 
   @media (max-width: 57.5em) {
-    font-size: 2.6rem;
-    top: 46%;
-    left: 62%;
+    top: 48vh;
   }
 
   @media (max-width: 45em) {
-    font-size: 2.2rem;
-    top: 40%;
-    left: 62%;
+    top: 44vh;
   }
 
   @media (max-width: 41.25em) {
     font-size: 2rem;
-    top: 39%;
-    left: 62%;
+    top: 38vh;
   }
 
   @media (max-width: 34.3em) {
     font-size: 1.8rem;
-    top: 36%;
-    left: 62%;
+    top: 34vh;
   }
 `;
 
@@ -209,7 +209,7 @@ export default function Landing() {
       </CTADiv>
       <ButtonDiv>
         <ButtonBox>
-          <CTAButton className="btn-cta">
+          <CTAButton>
             <span>Not anymore</span> <MdOutlineArrowOutward />
           </CTAButton>
         </ButtonBox>
