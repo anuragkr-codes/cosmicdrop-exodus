@@ -1,0 +1,118 @@
+[
+  {
+    "category": "Survival Essentials",
+    "items": [
+      {
+        "id": 1,
+        "name": "Water purification tablets",
+        "minQuantity": 5,
+        "price": 10
+      },
+      {
+        "id": 2,
+        "name": "Non perishable food packs",
+        "minQuantity": 1,
+        "price": 120
+      },
+      {
+        "id": 3,
+        "name": "Basic First Aid Kit",
+        "minQuantity": 1,
+        "price": 25
+      },
+      {
+        "id": 4,
+        "name": "Multivitamin Tablets",
+        "minQuantity": 1,
+        "price": 15
+      }
+    ]
+  },
+  {
+    "category": "Tech and Gear",
+    "items": [
+      {
+        "id": 5,
+        "name": "Space Suit",
+        "minQuantity": 1,
+        "price": 500
+      },
+      {
+        "id": 6,
+        "name": "GPS Device",
+        "minQuantity": 1,
+        "price": 150
+      },
+      {
+        "id": 7,
+        "name": "Solar Powered Cells",
+        "minQuantity": 2,
+        "price": 80
+      },
+      {
+        "id": 8,
+        "name": "Long Range Walkie-talkie",
+        "minQuantity": 1,
+        "price": 100
+      }
+    ]
+  },
+  {
+    "category": "Eco Cultivation",
+    "items": [
+      {
+        "id": 9,
+        "name": "Portable Hydrophonic Systems",
+        "minQuantity": 1,
+        "price": 200
+      },
+      {
+        "id": 10,
+        "name": "Biodegradable seed pods",
+        "minQuantity": 10,
+        "price": 15
+      },
+      {
+        "id": 11,
+        "name": "Compact soil testing kits",
+        "minQuantity": 1,
+        "price": 30
+      },
+      {
+        "id": 12,
+        "name": "Plant nutrient solutions",
+        "minQuantity": 1,
+        "price": 25
+      }
+    ]
+  },
+  {
+    "category": "Others",
+    "items": [
+      {
+        "id": 13,
+        "name": "Fitness equipment",
+        "minQuantity": 1,
+        "price": 150
+      },
+      {
+        "id": 14,
+        "name": "Books and multimedia content",
+        "minQuantity": 1,
+        "price": 20
+      },
+      {
+        "id": 15,
+        "name": "Portable Drones",
+        "minQuantity": 1,
+        "price": 300
+      },
+      {
+        "id": 16,
+        "name": "Self defence equipments",
+        "minQuantity": 1,
+        "price": 50
+      }
+    ]
+  }
+]

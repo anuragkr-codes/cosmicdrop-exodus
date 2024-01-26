@@ -163,7 +163,6 @@ const CTAButton = styled.div`
 `;
 
 export default function TimerSection() {
-  const [partyTime, setPartyTime] = useState(false);
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -172,12 +171,23 @@ export default function TimerSection() {
   useEffect(() => {
     const currentHour = new Date().getHours();
     let target = new Date();
-    if (currentHour < 8) {
+    if (currentHour >= 23) {
+      target.setDate(target.getDate() + 1);
       target.setHours(8);
+      target.setMinutes(0);
+      target.setSeconds(0);
+    } else if (currentHour < 8) {
+      target.setHours(8);
+      target.setMinutes(0);
+      target.setSeconds(0);
     } else if (currentHour < 16) {
       target.setHours(16);
+      target.setMinutes(0);
+      target.setSeconds(0);
     } else {
       target.setHours(23);
+      target.setMinutes(0);
+      target.setSeconds(0);
     }
 
     const interval = setInterval(() => {
@@ -199,7 +209,6 @@ export default function TimerSection() {
       setSeconds(s);
 
       if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
-        setPartyTime(true);
       }
     }, 1000);
 
