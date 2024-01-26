@@ -3,6 +3,7 @@ import Landing from "./components/Landing";
 import Features from "./components/Features";
 import Testimonials from "./components/Testimonials";
 import CTAEnd from "./components/CTAEnd";
+import TimerSection from "./components/TimerSection";
 // import Footer from "./components/Footer";
 import Spacer from "./components/Spacer";
 
@@ -29,6 +30,7 @@ function App() {
       <Header />
       <Landing />
       <Features />
+      <TimerSection />
       <Testimonials />
       <CTAEnd />
       {/* <Spacer /> */}

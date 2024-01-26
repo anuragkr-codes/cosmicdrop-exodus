@@ -16,7 +16,7 @@ const Div = styled.div`
 
   display: flex;
   justify-content: space-around;
-  gap: 12rem;
+  gap: 8vw;
 
   @media (max-width: 58.75em) {
     flex-direction: column;
@@ -40,7 +40,7 @@ const H2 = styled.h2`
     align-self: flex-start;
   }
 
-  .span-tomorrow {
+  .span-em {
     color: #ffad31;
   }
 `;
@@ -86,7 +86,7 @@ export default function Testimonials() {
       <Div>
         <H2>
           <span>Navigating</span>
-          <span className="span-tomorrow">Tomorrow, </span>
+          <span className="span-em">Tomorrow, </span>
           <span>one story</span>
           <span>at a time</span>
         </H2>
