@@ -67,7 +67,7 @@ const UnitBox = styled.div`
     color: #ffad31;
   }
   .label {
-    font-size: 2.8rem;
+    font-size: clamp(1.6rem, 1.8vw, 2.8rem);
     text-transform: uppercase;
   }
 `;
