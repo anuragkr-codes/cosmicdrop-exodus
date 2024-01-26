@@ -52,49 +52,49 @@ body {
   position: absolute;
   bottom: 20%;
   left: 45%;
-  animation: showPin1 linear forwards;
+  animation: showPin1 ease-in forwards;
 }
 
 .svg-pin2 {
   position: absolute;
   bottom: 25%;
   left: 35%;
-  animation: showPin2 linear forwards;
+  animation: showPin2 ease-in forwards;
 }
 
 .svg-pin3 {
   position: absolute;
   bottom: 25%;
   left: 55%;
-  animation: showPin3 linear forwards;
+  animation: showPin3 ease-in forwards;
 }
 
 .svg-pin4 {
   position: absolute;
   bottom: 22%;
   left: 60%;
-  animation: showPin4 linear forwards;
+  animation: showPin4 ease-in forwards;
 }
 
 .svg-pin5 {
   position: absolute;
   bottom: 18%;
   left: 70%;
-  animation: showPin5 linear forwards;
+  animation: showPin5 ease-in forwards;
 }
 
 .svg-pin6 {
   position: absolute;
   bottom: 24%;
   left: 74%;
-  animation: showPin6 linear forwards;
+  animation: showPin6 ease-in forwards;
 }
 
 .svg-pin7 {
   position: absolute;
   bottom: 15%;
   left: 85%;
-  animation: showPin7 linear forwards;
+  animation: showPin7 ease-in forwards;
 }
 
 .svg {

@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import QuoteIcon from "../assets/QuoteIcon.svg";
 
 const Section = styled.section`
   /* width: 100vw; */
   background: #030509;
-  padding: 8rem 2rem;
+  padding: 18rem 2rem;
 `;
 
 const Div = styled.div`
@@ -25,6 +25,12 @@ const Div = styled.div`
   }
 `;
 
+const colorChange = keyframes`
+    to {
+        color: #ffad31;
+    }    
+`;
+
 const H2 = styled.h2`
   text-transform: uppercase;
   font-size: clamp(4.8rem, 6.6vw, 10rem);
@@ -41,7 +47,9 @@ const H2 = styled.h2`
   }
 
   .span-em {
-    color: #ffad31;
+    color: #fff;
+    animation: ${colorChange} linear forwards;
+    animation-timeline: view(50vh 0);
   }
 `;
 
@@ -93,26 +101,24 @@ export default function Testimonials() {
         <TestimonialsDiv>
           <TestimonialBox>
             <P>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+              The products from CosmicDrop exceeded my expectations, providing
+              the essentials for survival with unparalleled quality.
             </P>
-            {/* <MySvg style={{ width: "50px", height: "50px" }} /> */}
             <QuoteImg src={QuoteIcon} alt="QuoteIcon svg" />
           </TestimonialBox>
           <TestimonialBox>
             <P>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+              CosmicDrops's technological tools became my lifeline in the
+              unexplored territories. Their commitment to innovation truly sets
+              them apart
             </P>
-            {/* <MySvg style={{ width: "50px", height: "50px" }} /> */}
             <QuoteImg src={QuoteIcon} alt="QuoteIcon svg" />
           </TestimonialBox>
           <TestimonialBox>
             <P>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+              The health and wellness products from CosmicDrop have been my
+              source of strength and vitality.
             </P>
-            {/* <MySvg style={{ width: "50px", height: "50px" }} /> */}
             <QuoteImg src={QuoteIcon} alt="QuoteIcon svg" />
           </TestimonialBox>
         </TestimonialsDiv>

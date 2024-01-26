@@ -9,30 +9,39 @@ import "swiper/css/pagination";
 import "./styles/featuresSwiper.css";
 
 const Section = styled.section`
-  /* width: 100vw; */
-  width: 100%;
+  width: 100vw;
+  /* width: 100%; */
   padding: 8rem 1rem;
   background: #030509;
   @media (max-width: 58.75em) {
-    padding: 2rem 0 0 0;
+    padding: 2.4rem 0 2.4rem 1rem;
   }
 `;
 
 const Div = styled.div`
   max-width: 140rem;
   margin: auto;
+  margin: 4rem auto;
   height: 100%;
-  background-color: #fff;
   position: relative;
+`;
+
+const H2 = styled.h2`
+  text-transform: uppercase;
+  background: inherit;
+  font-size: clamp(3.4rem, 6vw, 6rem);
+  font-weight: 500;
+  color: #fff;
 `;
 
 export default function Features() {
   return (
     <Section>
       <Div>
+        <H2>Our Products</H2>
         <Swiper
           slidesPerView={1}
-          spaceBetween={2}
+          spaceBetween={10}
           breakpoints={{
             // 640: {
             //   slidesPerView: 1,
@@ -67,10 +76,24 @@ export default function Features() {
             <div className="feature-box">
               <h3 className="feature-heading">Tech and Gear</h3>
               <ul className="feature-list">
-                <li>Clothing</li>
-                <li>Navigation Tools</li>
-                <li>Energy Cells</li>
-                <li>Communication devices</li>
+                <li>Space Suit</li>
+                <li>GPS Device</li>
+                <li>Solar Powered Cells</li>
+                <li>Long Range Walkie-talkie</li>
+              </ul>
+              <div className="view-more">
+                Order now <span>&rarr;</span>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="feature-box">
+              <h3 className="feature-heading">Eco Cultivation</h3>
+              <ul className="feature-list">
+                <li>Portable Hydrophonic Systems</li>
+                <li>Biodegradable seed pods</li>
+                <li>Compact soil testing kits</li>
+                <li>Plant nutrient solutions</li>
               </ul>
               <div className="view-more">
                 Order now <span>&rarr;</span>
@@ -83,36 +106,8 @@ export default function Features() {
               <ul className="feature-list">
                 <li>Fitness equipment</li>
                 <li>Books and multimedia content</li>
-                <li>Speeds and growth mediums</li>
+                <li>Portable Drones</li>
                 <li>Self defence equipments</li>
-              </ul>
-              <div className="view-more">
-                Order now <span>&rarr;</span>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="feature-box">
-              <h3 className="feature-heading"></h3>
-              <ul className="feature-list">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-              <div className="view-more">
-                Order now <span>&rarr;</span>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="feature-box">
-              <h3 className="feature-heading"></h3>
-              <ul className="feature-list">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
               </ul>
               <div className="view-more">
                 Order now <span>&rarr;</span>

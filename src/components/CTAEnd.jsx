@@ -81,10 +81,6 @@ const CTAButton = styled.div`
   @media (max-width: 67.5em) {
     top: 68vh;
   }
-
-  @media (max-width: 57.5em) {
-    top: 64vh;
-  }
 `;
 
 const Footer = styled.footer`
@@ -113,11 +109,13 @@ export default function CTAEnd() {
       <ButtonDiv>
         <ButtonBox>
           <CTAButton className="btn-cta">
-            <span>Order now</span> <MdOutlineArrowOutward />
+            <span>Shop now</span> <MdOutlineArrowOutward />
           </CTAButton>
         </ButtonBox>
       </ButtonDiv>
-      <Footer>Made with ❤️ in Manipal, by team devDuet</Footer>
+      <Footer>
+        Made with ❤️ in Manipal, by team <code>&lt;DevTitans /&gt;</code>
+      </Footer>
     </Section>
   );
 }

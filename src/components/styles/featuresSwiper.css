@@ -8,7 +8,7 @@
 
 @media (max-width: 58.75em) {
   .swiper {
-    padding: 10rem 2rem 10rem 6rem;
+    padding: 6rem 2rem;
   }
 }
 
@@ -45,27 +45,27 @@
 .swiper-slide:nth-child(1):hover {
   background: #ff6b00;
   color: #000;
-  box-shadow: 0 0 10rem 0 #ff6b00;
+  box-shadow: 0 0 10rem 0 hsla(25, 100%, 50%, 0.5);
 }
 .swiper-slide:nth-child(2):hover {
   background: #146ef5;
   color: #000;
-  box-shadow: 0 0 10rem 0 #146ef5;
+  box-shadow: 0 0 10rem 0 hsla(216, 92%, 52%, 0.5);
 }
 .swiper-slide:nth-child(3):hover {
   background: #ed52cb;
   color: #000;
-  box-shadow: 0 0 10rem 0 #ed52cb;
+  box-shadow: 0 0 10rem 0 hsla(313, 81%, 63%, 0.5);
 }
 .swiper-slide:nth-child(4):hover {
   background: #00d722;
   color: #000;
-  box-shadow: 0 0 10rem 0 #00d722;
+  box-shadow: 0 0 10rem 0 hsla(129, 100%, 42%, 0.5);
 }
 .swiper-slide:nth-child(5):hover {
   background: #ee1d36;
   color: #000;
-  box-shadow: 0 0 10rem 0 #ee1d36;
+  box-shadow: 0 0 10rem 0 hsla(353, 86%, 52%, 0.5);
 }
 
 .swiper-slide img {
@@ -87,19 +87,28 @@
 
 .feature-heading {
   text-transform: uppercase;
-  font-size: 2.8rem;
+  font-size: 4rem;
 }
 
 .feature-list {
   list-style: square;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
 }
 
+@media (max-width: 58.75em) {
+  .feature-heading {
+    font-size: 3.6rem;
+  }
+  .feature-list {
+    font-size: 2.2rem;
+  }
+}
+
 .view-more {
-  font-size: 1.8rem;
+  font-size: 2.6rem;
 }
 
 .view-more span {

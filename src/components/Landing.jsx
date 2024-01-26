@@ -4,8 +4,8 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Section = styled.section`
   height: 300vh;
-  /* width: 100vw; */
-  width: 100%;
+  width: 100vw;
+  /* width: 100%; */
   background: linear-gradient(
     180deg,
     #0e1322 0%,
@@ -39,16 +39,15 @@ const grow = keyframes`
 
 const HeroDiv = styled.div`
   height: 100vh;
-  /* width: 100vw; */
-  width: 100%;
-  /* font-size: 10vw; */
+  width: 100vw;
+  /* width: 100%; */
   position: fixed;
   top: 0;
 
   display: flex;
   justify-content: center;
 
-  animation: ${grow} linear forwards;
+  animation: ${grow} ease-in forwards;
   animation-timeline: view(0 100vh);
 `;
 
@@ -61,22 +60,40 @@ const bgAnimation = keyframes`
 const HeroTextDiv = styled.div`
   margin-top: 26vh;
 
-  font-size: clamp(4.2rem, 10vw, 16rem);
+  font-size: clamp(4.6rem, 10vw, 16rem);
   letter-spacing: -0.1vw;
   font-weight: 500;
   text-transform: uppercase;
   color: #fff;
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     151deg,
     rgba(255, 221, 170, 0.9697128851540616) 27%,
     rgba(167, 255, 241, 0.9753151260504201) 50%,
     rgba(255, 155, 244, 0.9220938375350141) 75%
+  ); */
+  /* background: linear-gradient(
+    151deg,
+    rgba(4, 253, 238, 0.8408613445378151) 27%,
+    rgba(84, 131, 215, 0.8576680672268908) 50%,
+    rgba(138, 49, 200, 0.8716736694677871) 75%
+  ); */
+  /* background: linear-gradient(
+    151deg,
+    rgba(255, 173, 49, 1) 27%,
+    rgba(238, 70, 211, 1) 50%,
+    rgba(144, 124, 255, 1) 75%
+  ); */
+  background: linear-gradient(
+    151deg,
+    rgba(255, 173, 49, 0.8156512605042017) 27%,
+    rgba(238, 70, 211, 0.9136904761904762) 50%,
+    rgba(144, 124, 255, 0.9557072829131653) 75%
   );
   background-clip: text;
   color: transparent;
-  background-size: 400%;
-  animation: ${bgAnimation} 10s infinite alternate;
+  background-size: 300%;
+  animation: ${bgAnimation} 6s infinite alternate;
 `;
 
 const show = keyframes`
@@ -87,8 +104,8 @@ const show = keyframes`
 
 const CTADiv = styled.div`
   height: 100vh;
-  /* width: 100vw; */
-  width: 100%;
+  width: 100vw;
+  /* width: 100%; */
 
   display: flex;
   margin-left: 1rem;
@@ -97,7 +114,7 @@ const CTADiv = styled.div`
   top: 0;
   opacity: 0;
 
-  animation: ${show} linear forwards;
+  animation: ${show} ease-in forwards;
   animation-timeline: view(50vh 0);
 `;
 
@@ -199,7 +216,7 @@ export default function Landing() {
         ))}
       </BackgroundImgDiv>
       <HeroDiv>
-        <HeroTextDiv>Placeholder</HeroTextDiv>
+        <HeroTextDiv>Cosmicdrop</HeroTextDiv>
       </HeroDiv>
       <CTADiv>
         <CTATextDiv>
