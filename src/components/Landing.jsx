@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import bgImg from "../assets/background-img.png";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import React from "react";
 
 const Section = styled.section`
   height: 300vh;
@@ -197,7 +198,7 @@ export default function Landing() {
       <BackgroundImgDiv>
         <BackgroundImg src={bgImg} />
         {Array.from({ length: 7 }).map((_, index) => (
-          <>
+          <React.Fragment key={index}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -205,14 +206,13 @@ export default function Landing() {
               viewBox="0 0 30 44"
               fill="none"
               className={`svg svg-pin${index + 1}`}
-              key={index}
             >
               <path
                 d="M14.9999 0C6.7158 0 0 6.83643 0 15.2699C0 16.7191 0.20266 18.1193 0.573199 19.4477C0.801353 20.2655 1.05089 21.0778 1.44478 21.8121C4.5207 27.5449 14.9998 44 14.9998 44C14.9998 44 25.4795 27.5446 28.5552 21.8117C28.9493 21.0776 29.1985 20.2654 29.4267 19.4477C29.797 18.1193 30 16.7191 30 15.2699C30 6.83643 23.2842 0 14.9999 0ZM14.9999 21.9934C12.908 21.9934 11.0415 20.9972 9.83037 19.4477C8.93306 18.2995 8.39482 16.8477 8.39482 15.2699C8.39482 11.5623 11.3578 8.54612 14.9999 8.54612C18.6421 8.54612 21.6047 11.5623 21.6047 15.2699C21.6047 16.8477 21.0667 18.2995 20.1694 19.4477C18.9582 20.9972 17.0919 21.9934 14.9999 21.9934Z"
                 fill="#FFAD31"
               />
             </svg>
-          </>
+          </React.Fragment>
         ))}
       </BackgroundImgDiv>
       <HeroDiv>

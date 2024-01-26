@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
+import { useEffect, useState } from "react";
+
 const Section = styled.section`
   /* width: 100vw; */
   height: 200vh;
@@ -161,6 +163,48 @@ const CTAButton = styled.div`
 `;
 
 export default function TimerSection() {
+  const [partyTime, setPartyTime] = useState(false);
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const currentHour = new Date().getHours();
+    let target = new Date();
+    if (currentHour < 8) {
+      target.setHours(8);
+    } else if (currentHour < 16) {
+      target.setHours(16);
+    } else {
+      target.setHours(23);
+    }
+
+    const interval = setInterval(() => {
+      const now = new Date();
+      const difference = target.getTime() - now.getTime();
+
+      const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+      setDays(d);
+
+      const h = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      setHours(h);
+
+      const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      setMinutes(m);
+
+      const s = Math.floor((difference % (1000 * 60)) / 1000);
+      setSeconds(s);
+
+      if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
+        setPartyTime(true);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <Section>
       <Div>
@@ -168,22 +212,22 @@ export default function TimerSection() {
           <PTimer>Our next drop in </PTimer>
           <TimerBox>
             <UnitBox>
-              <span className="time">01</span>
+              <span className="time">{days}</span>
               <span className="label">days</span>
             </UnitBox>
             <DividerBox>:</DividerBox>
             <UnitBox>
-              <span className="time">10</span>
+              <span className="time">{hours}</span>
               <span className="label">hours</span>
             </UnitBox>
             <DividerBox>:</DividerBox>
             <UnitBox>
-              <span className="time">24</span>
+              <span className="time">{minutes}</span>
               <span className="label">mins</span>
             </UnitBox>
             <DividerBox>:</DividerBox>
             <UnitBox>
-              <span className="time">15</span>
+              <span className="time">{seconds}</span>
               <span className="label">secs</span>
             </UnitBox>
           </TimerBox>
