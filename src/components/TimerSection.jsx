@@ -207,9 +207,6 @@ export default function TimerSection() {
 
       const s = Math.floor((difference % (1000 * 60)) / 1000);
       setSeconds(s);
-
-      if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
-      }
     }, 1000);
 
     return () => clearInterval(interval);

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -35,6 +36,22 @@ const H2 = styled.h2`
 `;
 
 export default function Features() {
+  const [productData, setProductData] = useState([]);
+
+  useEffect(() => {
+    async function fetchProductData() {
+      try {
+        const res = await fetch("/products.json");
+        const data = await res.json();
+        setProductData(data);
+      } catch (er) {
+        console.log("Error fetching product data");
+      }
+    }
+
+    fetchProductData();
+  }, []);
+
   return (
     <Section>
       <Div>
@@ -58,62 +75,21 @@ export default function Features() {
           }}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <div className="feature-box">
-              <h3 className="feature-heading">Survival Essentials</h3>
-              <ul className="feature-list">
-                <li>Water purification tablets</li>
-                <li>Non perishable food packs</li>
-                <li>First Aid kits</li>
-                <li>Vitamin supplements</li>
-              </ul>
-              <div className="view-more">
-                Order now <span>&rarr;</span>
+          {productData.map((category) => (
+            <SwiperSlide key={category.category}>
+              <div className="feature-box">
+                <h3 className="feature-heading">{category.category}</h3>
+                <ul className="feature-list">
+                  {category.items.map((product) => (
+                    <li key={product.id}>{product.name}</li>
+                  ))}
+                </ul>
+                <div className="view-more">
+                  Order now <span>&rarr;</span>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="feature-box">
-              <h3 className="feature-heading">Tech and Gear</h3>
-              <ul className="feature-list">
-                <li>Space Suit</li>
-                <li>GPS Device</li>
-                <li>Solar Powered Cells</li>
-                <li>Long Range Walkie-talkie</li>
-              </ul>
-              <div className="view-more">
-                Order now <span>&rarr;</span>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="feature-box">
-              <h3 className="feature-heading">Eco Cultivation</h3>
-              <ul className="feature-list">
-                <li>Portable Hydrophonic Systems</li>
-                <li>Biodegradable seed pods</li>
-                <li>Compact soil testing kits</li>
-                <li>Plant nutrient solutions</li>
-              </ul>
-              <div className="view-more">
-                Order now <span>&rarr;</span>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="feature-box">
-              <h3 className="feature-heading">Other</h3>
-              <ul className="feature-list">
-                <li>Fitness equipment</li>
-                <li>Books and multimedia content</li>
-                <li>Portable Drones</li>
-                <li>Self defence equipments</li>
-              </ul>
-              <div className="view-more">
-                Order now <span>&rarr;</span>
-              </div>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Div>
     </Section>
