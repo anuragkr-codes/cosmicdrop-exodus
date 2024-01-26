@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 import Features from "./components/Features";
+import Testimonials from "./components/Testimonials";
 import Spacer from "./components/Spacer";
 
 //Smooth Scroll
@@ -26,6 +27,7 @@ function App() {
       <Header />
       <Landing />
       <Features />
+      <Testimonials />
       <Spacer />
     </>
   );

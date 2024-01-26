@@ -12,9 +12,12 @@ import "./styles/featuresSwiper.css";
 import { Pagination } from "swiper/modules";
 
 const Section = styled.section`
-  width: 100%;
+  width: 100vw;
   padding: 8rem 1rem;
   background: #030509;
+  @media (max-width: 58.75em) {
+    padding: 2rem 0 0 0;
+  }
 `;
 
 const Div = styled.div`
@@ -32,9 +35,6 @@ export default function Features() {
         <Swiper
           slidesPerView={1}
           spaceBetween={2}
-          pagination={{
-            clickable: true,
-          }}
           breakpoints={{
             // 640: {
             //   slidesPerView: 1,
@@ -49,7 +49,6 @@ export default function Features() {
               spaceBetween: 30,
             },
           }}
-          modules={[Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>
@@ -62,7 +61,7 @@ export default function Features() {
                 <li>Vitamin supplements</li>
               </ul>
               <div className="view-more">
-                View more <span>&rarr;</span>
+                Order now <span>&rarr;</span>
               </div>
             </div>
           </SwiperSlide>
@@ -76,7 +75,7 @@ export default function Features() {
                 <li>Communication devices</li>
               </ul>
               <div className="view-more">
-                View more <span>&rarr;</span>
+                Order now <span>&rarr;</span>
               </div>
             </div>
           </SwiperSlide>
@@ -90,7 +89,7 @@ export default function Features() {
                 <li>Self defence equipments</li>
               </ul>
               <div className="view-more">
-                View more <span>&rarr;</span>
+                Order now <span>&rarr;</span>
               </div>
             </div>
           </SwiperSlide>
@@ -104,7 +103,7 @@ export default function Features() {
                 <li></li>
               </ul>
               <div className="view-more">
-                View more <span>&rarr;</span>
+                Order now <span>&rarr;</span>
               </div>
             </div>
           </SwiperSlide>
@@ -118,7 +117,7 @@ export default function Features() {
                 <li></li>
               </ul>
               <div className="view-more">
-                View more <span>&rarr;</span>
+                Order now <span>&rarr;</span>
               </div>
             </div>
           </SwiperSlide>

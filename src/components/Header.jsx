@@ -7,7 +7,7 @@ const HeaderElement = styled.header`
 
   width: 100vw;
   height: 8rem;
-  padding: 0 4.8rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +28,6 @@ const FeatureLinkDiv = styled.div`
 
 const LogoDiv = styled.div`
   font-size: clamp(2.2rem, 2.6vw, 3.2rem);
-  font-weight: 300;
   font-weight: 300;
 
   @media (max-width: 41.25em) {

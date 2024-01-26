@@ -4,7 +4,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Section = styled.section`
   height: 300vh;
-  width: 100%;
+  width: 100vw;
   background: linear-gradient(
     180deg,
     #0e1322 0%,
@@ -12,6 +12,7 @@ const Section = styled.section`
     #060a13 57.86%,
     #000 100%
   );
+  /* overflow-x: hidden; */
 `;
 
 const BackgroundImgDiv = styled.div`
