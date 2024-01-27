@@ -9,6 +9,9 @@ import "swiper/css/pagination";
 
 import "./styles/featuresSwiper.css";
 
+import ShopCategory from "./ShopCategory";
+import Overlay from "./Overlay";
+
 const Section = styled.section`
   width: 100vw;
   /* width: 100%; */
@@ -37,6 +40,11 @@ const H2 = styled.h2`
 
 export default function Features() {
   const [productData, setProductData] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const handleSelectedCategory = function (category) {
+    setSelectedCategory(category);
+  };
 
   useEffect(() => {
     async function fetchProductData() {
@@ -56,6 +64,15 @@ export default function Features() {
     <Section>
       <Div>
         <H2>Our Products</H2>
+        {selectedCategory && (
+          <>
+            <Overlay onClick={handleSelectedCategory} />
+            <ShopCategory
+              category={selectedCategory}
+              onSelectCategory={handleSelectedCategory}
+            />
+          </>
+        )}
         <Swiper
           slidesPerView={1}
           spaceBetween={10}
@@ -77,7 +94,10 @@ export default function Features() {
         >
           {productData.map((category) => (
             <SwiperSlide key={category.category}>
-              <div className="feature-box">
+              <div
+                className="feature-box"
+                onClick={() => handleSelectedCategory(category.category)}
+              >
                 <h3 className="feature-heading">{category.category}</h3>
                 <ul className="feature-list">
                   {category.items.map((product) => (
