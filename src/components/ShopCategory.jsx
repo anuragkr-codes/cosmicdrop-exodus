@@ -51,10 +51,9 @@ const H3 = styled.h3`
 `;
 const GridDiv = styled.div`
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
   column-gap: 6vw;
   row-gap: 2vh;
-  /* align-items: center; */
 `;
 
 const DivProductName = styled.div`
@@ -75,40 +74,24 @@ const Select = styled.select`
   color: #012a4a;
 `;
 
-const AddButtonDiv = styled.div`
-  margin-top: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const Button = styled.div`
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: #012a4a;
   font-weight: 500;
   background-color: #fff;
   padding: 1rem 2rem;
   border-radius: 2.4rem;
   cursor: pointer;
+  white-space: nowrap;
 `;
 
-export default function ShopCategory({ category, onSelectCategory }) {
-  const [productsData, setProductsData] = useState([]);
-  useEffect(() => {
-    async function fetchProductData() {
-      try {
-        const res = await fetch("products.json");
-        const data = await res.json();
-        setProductsData(data);
-        console.log(data);
-      } catch (er) {
-        console.log("Error fetching data");
-      }
-    }
-
-    fetchProductData();
-  }, []);
-
+export default function ShopCategory({
+  category,
+  onSelectCategory,
+  productsData,
+  cart,
+  onAddToCart,
+}) {
   return (
     <Div category={category}>
       <H3>{category}</H3>
@@ -116,22 +99,48 @@ export default function ShopCategory({ category, onSelectCategory }) {
         {productsData
           .find((categoryProducts) => categoryProducts.category === category)
           ?.items.map((product) => (
-            <React.Fragment key={product.id}>
-              <DivProductName>{product.name}</DivProductName>
-              <DivProductPrice>&#8377; {product.price}</DivProductPrice>
-              <Select>
-                {Array.from({ length: 15 }).map((_, index) => (
-                  <option value={index + 1} key={index}>
-                    {index + 1 <= 9 ? `0${index + 1}` : `${index + 1}`}
-                  </option>
-                ))}
-              </Select>
-            </React.Fragment>
+            <Product
+              category={category}
+              product={product}
+              key={product.id}
+              onAddToCart={onAddToCart}
+            ></Product>
           ))}
       </GridDiv>
-      <AddButtonDiv>
-        <Button>Add to Cart</Button>
-      </AddButtonDiv>
     </Div>
+  );
+}
+
+function Product({ category, product, onAddToCart }) {
+  const [quantity, setQuantity] = useState(0);
+  const handleSetQuantity = function (e) {
+    setQuantity(Number(e.target.value));
+  };
+
+  const handleAddToCart = function () {
+    const cartItem = {
+      category,
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity,
+    };
+    onAddToCart(cartItem);
+    setQuantity(0);
+  };
+
+  return (
+    <>
+      <DivProductName>{product.name}</DivProductName>
+      <DivProductPrice>&#8377; {product.price}</DivProductPrice>
+      <Select value={quantity} onChange={handleSetQuantity}>
+        {Array.from({ length: 16 }).map((_, index) => (
+          <option value={index} key={index}>
+            {index <= 9 ? `0${index}` : `${index}`}
+          </option>
+        ))}
+      </Select>
+      <Button onClick={handleAddToCart}>Add to Cart</Button>
+    </>
   );
 }

@@ -38,27 +38,12 @@ const H2 = styled.h2`
   color: #fff;
 `;
 
-export default function Features() {
-  const [productData, setProductData] = useState([]);
+export default function Features({ productsData, cart, onAddToCart }) {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleSelectedCategory = function (category) {
     setSelectedCategory(category);
   };
-
-  useEffect(() => {
-    async function fetchProductData() {
-      try {
-        const res = await fetch("/products.json");
-        const data = await res.json();
-        setProductData(data);
-      } catch (er) {
-        console.log("Error fetching product data");
-      }
-    }
-
-    fetchProductData();
-  }, []);
 
   return (
     <Section>
@@ -70,6 +55,9 @@ export default function Features() {
             <ShopCategory
               category={selectedCategory}
               onSelectCategory={handleSelectedCategory}
+              productsData={productsData}
+              cart={cart}
+              onAddToCart={onAddToCart}
             />
           </>
         )}
@@ -92,7 +80,7 @@ export default function Features() {
           }}
           className="mySwiper"
         >
-          {productData.map((category) => (
+          {productsData.map((category) => (
             <SwiperSlide key={category.category}>
               <div
                 className="feature-box"

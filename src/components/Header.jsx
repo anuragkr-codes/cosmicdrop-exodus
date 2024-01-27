@@ -37,6 +37,24 @@ const FeatureLinkDiv = styled.div`
   }
 `;
 
+const CartIconDiv = styled.div`
+  position: relative;
+
+  .product-number {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 1rem;
+    padding: 0.6rem;
+    border-radius: 100%;
+    background-color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #0c121f;
+  }
+`;
+
 const LogoDiv = styled.div`
   font-size: clamp(2.2rem, 2.6vw, 3.2rem);
   font-weight: 400;
@@ -49,13 +67,16 @@ const LogoDiv = styled.div`
 
 const Img = styled.img`
   width: 4.4rem;
+  display: inline-block;
 
   @media (max-width: 41.25em) {
     width: 3.4rem;
   }
 `;
 
-export default function Header() {
+export default function Header({ cart }) {
+  const noOfProductInCart = cart.length;
+
   return (
     <HeaderElement>
       <FeatureLinkDiv>Our items</FeatureLinkDiv>
@@ -64,7 +85,10 @@ export default function Header() {
       <FeatureLinkDiv>Next Delivery</FeatureLinkDiv>
       <FeatureLinkDiv className="cart-link">
         <span>Cart </span>
-        <Img src={CartIcon} />
+        <CartIconDiv>
+          <Img src={CartIcon} />
+          <span className="product-number">{noOfProductInCart}</span>
+        </CartIconDiv>
       </FeatureLinkDiv>
     </HeaderElement>
   );

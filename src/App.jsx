@@ -7,6 +7,7 @@ import TimerSection from "./components/TimerSection";
 // import Footer from "./components/Footer";
 import Spacer from "./components/Spacer";
 
+import { useState, useEffect } from "react";
 //Smooth Scroll
 import Lenis from "@studio-freight/lenis";
 
@@ -25,11 +26,48 @@ requestAnimationFrame(raf);
 //Smooth Scroll Done
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const [productsData, setProductsData] = useState([]);
+  useEffect(() => {
+    async function fetchProductData() {
+      try {
+        const res = await fetch("products.json");
+        const data = await res.json();
+        setProductsData(data);
+      } catch (er) {
+        console.log("Error fetching data");
+      }
+    }
+
+    fetchProductData();
+  }, []);
+
+  const handleSetCart = function (product) {
+    console.log(product);
+    const exists = cart.some((p) => p.id === product.id);
+    if (exists) {
+      setCart((prevCart) =>
+        prevCart.map((p) =>
+          p.id === product.id
+            ? { ...p, quantity: p.quantity + product.quantity }
+            : p
+        )
+      );
+    } else {
+      setCart((prevCart) => [...prevCart, product]);
+    }
+  };
+
   return (
     <>
-      <Header />
+      <Header cart={cart} />
       <Landing />
-      <Features />
+      <Features
+        productsData={productsData}
+        cart={cart}
+        onAddToCart={handleSetCart}
+      />
       <TimerSection />
       <Testimonials />
       <CTAEnd />
