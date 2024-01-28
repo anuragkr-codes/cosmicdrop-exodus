@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import QuoteIcon from "../assets/QuoteIcon.svg";
+import { useEffect, useRef } from "react";
 
 const Section = styled.section`
   /* width: 100vw; */
@@ -88,9 +89,34 @@ const QuoteImg = styled.img`
   }
 `;
 
-export default function Testimonials() {
+export default function Testimonials({ onIntersection }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const options = {
+      // rootMargin: "-50%",
+      rootMargin: "0% 0% -100% 0%",
+    };
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting === true) {
+        onIntersection(true);
+      } else {
+        onIntersection(false);
+      }
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [onIntersection]);
   return (
-    <Section id="testimonials">
+    <Section id="testimonials" ref={ref}>
       <Div>
         <H2>
           <span>Navigating</span>

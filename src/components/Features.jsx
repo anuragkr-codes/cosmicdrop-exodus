@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -39,15 +39,46 @@ const H2 = styled.h2`
   padding-left: 1rem;
 `;
 
-export default function Features({ productsData, cart, onAddToCart }) {
+export default function Features({
+  productsData,
+  cart,
+  onAddToCart,
+  onIntersection,
+}) {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleSelectedCategory = function (category) {
     setSelectedCategory(category);
   };
 
+  const ref = useRef(null);
+  useEffect(() => {
+    const options = {
+      // rootMargin: "-50%",
+      rootMargin: "0% 0% -100% 0%",
+    };
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting === true) {
+        onIntersection(true);
+      } else {
+        onIntersection(false);
+      }
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [onIntersection]);
+
   return (
-    <Section id="products">
+    <Section id="products" ref={ref}>
       <Div>
         <H2>Our Products</H2>
         {selectedCategory && (

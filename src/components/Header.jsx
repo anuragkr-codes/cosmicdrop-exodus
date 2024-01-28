@@ -22,8 +22,10 @@ const HeaderElement = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* background-color: transparent; */
 
   color: #fff;
+  transition: background-color 0.2s ease;
 
   @media (max-width: 41.25em) {
     padding: 4.4rem 2rem;
@@ -108,11 +110,11 @@ const Img = styled.img`
   }
 `;
 
-export default function Header({ cart, showCart, onShowCart }) {
+export default function Header({ cart, showCart, onShowCart, solidBg }) {
   const noOfProductInCart = cart.length;
 
   return (
-    <HeaderElement>
+    <HeaderElement className={solidBg ? "header-solid-bg" : ""}>
       <FeatureLinkDiv>
         <a href="#products">Our Products</a>
       </FeatureLinkDiv>

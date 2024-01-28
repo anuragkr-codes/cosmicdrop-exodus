@@ -30,7 +30,6 @@ function App() {
   useEffect(() => {
     //Section smooth scroll
     const allLinks = document.querySelectorAll("a:link");
-    console.log(allLinks);
 
     allLinks.forEach(function (link) {
       link.addEventListener("click", function (e) {
@@ -55,6 +54,7 @@ function App() {
 
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [solidHeaderBg, setSolidHeaderBg] = useState(false);
 
   const [productsData, setProductsData] = useState([]);
   useEffect(() => {
@@ -95,9 +95,19 @@ function App() {
     setShowCart((c) => !c);
   };
 
+  const handleSolidHeaderBg = function (value) {
+    setSolidHeaderBg(value);
+    console.log("intersected");
+  };
+
   return (
     <>
-      <Header cart={cart} showCart={showCart} onShowCart={handleShowCart} />
+      <Header
+        cart={cart}
+        showCart={showCart}
+        onShowCart={handleShowCart}
+        solidBg={solidHeaderBg}
+      />
       {showCart ? (
         <Cart
           cart={cart}
@@ -110,9 +120,10 @@ function App() {
         productsData={productsData}
         cart={cart}
         onAddToCart={handleSetCart}
+        onIntersection={handleSolidHeaderBg}
       />
       <TimerSection />
-      <Testimonials />
+      <Testimonials onIntersection={handleSolidHeaderBg} />
       <CTAEnd />
       {/* <Spacer /> */}
       {/* <Spacer /> */}
