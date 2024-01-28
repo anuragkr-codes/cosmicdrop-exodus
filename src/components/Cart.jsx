@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Overlay from "./Overlay";
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 
 const Section = styled.section`
   position: fixed;
@@ -104,7 +104,24 @@ const RemoveSpan = styled.span`
   scale: 0.6;
 `;
 
-export default function Cart({ cart, onDeleteCart }) {
+export default function Cart({ cart, onDeleteCart, onEscKey }) {
+  const handleEscapeKeyPress = useCallback(
+    (event) => {
+      if (event.key === "Escape") {
+        onEscKey();
+      }
+    },
+    [onEscKey]
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleEscapeKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKeyPress);
+    };
+  }, [handleEscapeKeyPress]);
+
   const subtotal = Number(
     cart
       .reduce(

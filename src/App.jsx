@@ -72,7 +72,13 @@ function App() {
   return (
     <>
       <Header cart={cart} showCart={showCart} onShowCart={handleShowCart} />
-      {showCart ? <Cart cart={cart} onDeleteCart={handleDeleteCart} /> : null}
+      {showCart ? (
+        <Cart
+          cart={cart}
+          onDeleteCart={handleDeleteCart}
+          onEscKey={handleShowCart}
+        />
+      ) : null}
       <Landing />
       <Features
         productsData={productsData}
