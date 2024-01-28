@@ -4,6 +4,7 @@ import Features from "./components/Features";
 import Testimonials from "./components/Testimonials";
 import CTAEnd from "./components/CTAEnd";
 import TimerSection from "./components/TimerSection";
+import Cart from "./components/Cart";
 // import Footer from "./components/Footer";
 import Spacer from "./components/Spacer";
 
@@ -27,6 +28,7 @@ requestAnimationFrame(raf);
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
   const [productsData, setProductsData] = useState([]);
   useEffect(() => {
@@ -59,9 +61,18 @@ function App() {
     }
   };
 
+  const handleDeleteCart = function (id) {
+    setCart((cart) => cart.filter((product) => product.id !== id));
+  };
+
+  const handleShowCart = function () {
+    setShowCart((c) => !c);
+  };
+
   return (
     <>
-      <Header cart={cart} />
+      <Header cart={cart} showCart={showCart} onShowCart={handleShowCart} />
+      {showCart ? <Cart cart={cart} onDeleteCart={handleDeleteCart} /> : null}
       <Landing />
       <Features
         productsData={productsData}

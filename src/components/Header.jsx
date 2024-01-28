@@ -4,10 +4,10 @@ import CartIcon from "../assets/Cart.png";
 const HeaderElement = styled.header`
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 2222;
 
-  width: 100vw;
-  /* width: 100%; */
+  /* width: 100vw; */
+  width: 100%;
   height: 6rem;
   padding: 0 4rem;
   display: flex;
@@ -37,6 +37,23 @@ const FeatureLinkDiv = styled.div`
   }
 `;
 
+const CartLinkDiv = styled.div`
+  /* font-size: 3rem; */
+  /* font-size: 2.4vw; */
+  font-size: clamp(2rem, 2.4vw, 3rem);
+  font-weight: 300;
+  padding: 1rem 0.4rem 0 0.4rem;
+  cursor: pointer;
+
+  /* padding: ${(props) => (props.showCart ? "1rem 0.4rem 0 0.4rem" : 0)}; */
+  background-color: ${(props) => (props.showCart ? "#ffad31" : "transparent")};
+  border-radius: ${(props) => (props.showCart ? "1.4rem 1.4rem 0 0" : 0)};
+  box-shadow: ${(props) => (props.showCart ? "0 20px 0 0 #ffad31" : "initial")};
+
+  @media (max-width: 41.25em) {
+    display: none;
+  }
+`;
 const CartIconDiv = styled.div`
   position: relative;
 
@@ -74,7 +91,7 @@ const Img = styled.img`
   }
 `;
 
-export default function Header({ cart }) {
+export default function Header({ cart, showCart, onShowCart }) {
   const noOfProductInCart = cart.length;
 
   return (
@@ -83,13 +100,17 @@ export default function Header({ cart }) {
       <FeatureLinkDiv>Testimonials</FeatureLinkDiv>
       <LogoDiv>Cosmicdrop</LogoDiv>
       <FeatureLinkDiv>Next Delivery</FeatureLinkDiv>
-      <FeatureLinkDiv className="cart-link">
+      <CartLinkDiv
+        className="cart-link"
+        showCart={showCart}
+        onClick={onShowCart}
+      >
         <span>Cart </span>
         <CartIconDiv>
           <Img src={CartIcon} />
           <span className="product-number">{noOfProductInCart}</span>
         </CartIconDiv>
-      </FeatureLinkDiv>
+      </CartLinkDiv>
     </HeaderElement>
   );
 }

@@ -51,7 +51,7 @@ export default function Features({ productsData, cart, onAddToCart }) {
         <H2>Our Products</H2>
         {selectedCategory && (
           <>
-            <Overlay onClick={handleSelectedCategory} />
+            <Overlay onClick={handleSelectedCategory} zIndex={777} />
             <ShopCategory
               category={selectedCategory}
               onSelectCategory={handleSelectedCategory}

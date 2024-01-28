@@ -38,6 +38,14 @@
   padding: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -46,6 +54,7 @@ body {
   font-family: "Space Grotesk", sans-serif;
   line-height: 1;
   overflow-x: hidden;
+  user-select: none;
 }
 
 .svg-pin1 {
