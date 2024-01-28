@@ -212,7 +212,7 @@ export default function TimerSection() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <Section>
+    <Section id="next-delivery">
       <Div>
         <DivTimer>
           <PTimer>Our next drop in </PTimer>

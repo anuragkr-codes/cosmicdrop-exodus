@@ -1,6 +1,15 @@
 import styled from "styled-components";
 import CartIcon from "../assets/Cart.png";
 
+// import Lenis from "@studio-freight/lenis";
+
+// const lenis = new Lenis();
+
+// const scrollToSection = (selector) => {
+//   const targetElement = document.querySelector(selector);
+//   lenis.scrollTo(targetElement);
+// };
+
 const HeaderElement = styled.header`
   position: fixed;
   top: 0;
@@ -35,6 +44,18 @@ const FeatureLinkDiv = styled.div`
   @media (max-width: 41.25em) {
     display: none;
   }
+
+  a:link,
+  a:visited {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover,
+  a:active {
+    color: #ffad31;
+  }
 `;
 
 const CartLinkDiv = styled.div`
@@ -49,10 +70,6 @@ const CartLinkDiv = styled.div`
   background-color: ${(props) => (props.showCart ? "#ffad31" : "transparent")};
   border-radius: ${(props) => (props.showCart ? "1.4rem 1.4rem 0 0" : 0)};
   box-shadow: ${(props) => (props.showCart ? "0 20px 0 0 #ffad31" : "initial")};
-
-  @media (max-width: 41.25em) {
-    display: none;
-  }
 `;
 const CartIconDiv = styled.div`
   position: relative;
@@ -96,14 +113,21 @@ export default function Header({ cart, showCart, onShowCart }) {
 
   return (
     <HeaderElement>
-      <FeatureLinkDiv>Our items</FeatureLinkDiv>
-      <FeatureLinkDiv>Testimonials</FeatureLinkDiv>
+      <FeatureLinkDiv>
+        <a href="#products">Our Products</a>
+      </FeatureLinkDiv>
+      <FeatureLinkDiv>
+        <a href="#next-delivery">Next Delivery</a>
+      </FeatureLinkDiv>
       <LogoDiv>Cosmicdrop</LogoDiv>
-      <FeatureLinkDiv>Next Delivery</FeatureLinkDiv>
+      <FeatureLinkDiv>
+        <a href="#testimonials">Testimonials</a>
+      </FeatureLinkDiv>
       <CartLinkDiv
         className="cart-link"
         showCart={showCart}
         onClick={onShowCart}
+        name="data-lenis-toggle"
       >
         <span>Cart </span>
         <CartIconDiv>

@@ -90,7 +90,7 @@ const QuoteImg = styled.img`
 
 export default function Testimonials() {
   return (
-    <Section>
+    <Section id="testimonials">
       <Div>
         <H2>
           <span>Navigating</span>

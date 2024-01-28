@@ -39,7 +39,7 @@ const GridDiv = styled.div`
 
 const P = styled.p`
   padding: 4rem 3.2rem 8rem 3.2rem;
-  font-size: clamp(1.6rem, 2vw, 3rem);
+  font-size: clamp(2rem, 2vw, 3rem);
   @media (max-width: 41.25em) {
     padding: 4rem 1.6rem 8rem 1.6rem;
   }
@@ -104,6 +104,7 @@ const RemoveSpan = styled.span`
   color: #000;
   cursor: pointer;
   scale: 1.2;
+  align-self: center;
 `;
 
 export default function Cart({ cart, onDeleteCart, onEscKey }) {

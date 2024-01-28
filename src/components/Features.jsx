@@ -46,7 +46,7 @@ export default function Features({ productsData, cart, onAddToCart }) {
   };
 
   return (
-    <Section>
+    <Section id="products">
       <Div>
         <H2>Our Products</H2>
         {selectedCategory && (
