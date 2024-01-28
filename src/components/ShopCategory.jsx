@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
-import React from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const Div = styled.div`
   position: fixed;
@@ -123,6 +122,23 @@ export default function ShopCategory({
   productsData,
   onAddToCart,
 }) {
+  const handleEscapeKeyPress = useCallback(
+    (event) => {
+      if (event.key === "Escape") {
+        onSelectCategory("");
+      }
+    },
+    [onSelectCategory]
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleEscapeKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKeyPress);
+    };
+  }, [handleEscapeKeyPress]);
+
   return (
     <Div category={category}>
       <H3>
