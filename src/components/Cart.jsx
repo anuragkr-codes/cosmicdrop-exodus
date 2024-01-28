@@ -101,7 +101,9 @@ const TotalValueSpan = styled.span`
 
 const RemoveSpan = styled.span`
   display: inline-block;
-  scale: 0.6;
+  color: #000;
+  cursor: pointer;
+  scale: 1.2;
 `;
 
 export default function Cart({ cart, onDeleteCart, onEscKey }) {
@@ -149,7 +151,7 @@ export default function Cart({ cart, onDeleteCart, onEscKey }) {
             {cart.map((product) => (
               <React.Fragment key={product.id}>
                 <RemoveSpan onClick={() => onDeleteCart(product.id)}>
-                  ❌
+                  &times;
                 </RemoveSpan>
                 <NameSpan>{product.name}</NameSpan>
                 <PriceSpan>&#8377; {product.price}</PriceSpan>

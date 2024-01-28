@@ -54,7 +54,20 @@ const H3 = styled.h3`
   font-weight: 500;
   white-space: nowrap;
   margin-bottom: 4vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vh;
+
+  .cross {
+    display: inline-block;
+    scale: 1.2;
+    cursor: pointer;
+    color: #fff;
+  }
 `;
+
 const GridDiv = styled.div`
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr;
@@ -108,12 +121,16 @@ export default function ShopCategory({
   category,
   onSelectCategory,
   productsData,
-  cart,
   onAddToCart,
 }) {
   return (
     <Div category={category}>
-      <H3>{category}</H3>
+      <H3>
+        <span>{category}</span>
+        <span className="cross" onClick={() => onSelectCategory("")}>
+          &times;
+        </span>
+      </H3>
       <GridDiv>
         {productsData
           .find((categoryProducts) => categoryProducts.category === category)
