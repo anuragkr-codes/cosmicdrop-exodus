@@ -25,7 +25,7 @@ const HeaderElement = styled.header`
   /* background-color: transparent; */
 
   color: #fff;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.1s ease;
 
   @media (max-width: 41.25em) {
     padding: 4.4rem 2rem;

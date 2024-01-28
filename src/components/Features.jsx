@@ -55,7 +55,7 @@ export default function Features({
   useEffect(() => {
     const options = {
       // rootMargin: "-50%",
-      rootMargin: "0% 0% -100% 0%",
+      rootMargin: "0% 0% -50% 0%",
     };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
