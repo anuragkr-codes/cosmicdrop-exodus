@@ -42,30 +42,32 @@
   border: 1px solid #ee1d36;
 }
 
-.swiper-slide:nth-child(1):hover {
-  background: #ff6b00;
-  color: #000;
-  box-shadow: 0 0 10rem 0 hsla(25, 100%, 50%, 0.5);
-}
-.swiper-slide:nth-child(2):hover {
-  background: #146ef5;
-  color: #000;
-  box-shadow: 0 0 10rem 0 hsla(216, 92%, 52%, 0.5);
-}
-.swiper-slide:nth-child(3):hover {
-  background: #ed52cb;
-  color: #000;
-  box-shadow: 0 0 10rem 0 hsla(313, 81%, 63%, 0.5);
-}
-.swiper-slide:nth-child(4):hover {
-  background: #00d722;
-  color: #000;
-  box-shadow: 0 0 10rem 0 hsla(129, 100%, 42%, 0.5);
-}
-.swiper-slide:nth-child(5):hover {
-  background: #ee1d36;
-  color: #000;
-  box-shadow: 0 0 10rem 0 hsla(353, 86%, 52%, 0.5);
+@media (hover: hover) {
+  .swiper-slide:nth-child(1):hover {
+    background: #ff6b00;
+    color: #000;
+    box-shadow: 0 0 10rem 0 hsla(25, 100%, 50%, 0.5);
+  }
+  .swiper-slide:nth-child(2):hover {
+    background: #146ef5;
+    color: #000;
+    box-shadow: 0 0 10rem 0 hsla(216, 92%, 52%, 0.5);
+  }
+  .swiper-slide:nth-child(3):hover {
+    background: #ed52cb;
+    color: #000;
+    box-shadow: 0 0 10rem 0 hsla(313, 81%, 63%, 0.5);
+  }
+  .swiper-slide:nth-child(4):hover {
+    background: #00d722;
+    color: #000;
+    box-shadow: 0 0 10rem 0 hsla(129, 100%, 42%, 0.5);
+  }
+  .swiper-slide:nth-child(5):hover {
+    background: #ee1d36;
+    color: #000;
+    box-shadow: 0 0 10rem 0 hsla(353, 86%, 52%, 0.5);
+  }
 }
 
 .swiper-slide img {

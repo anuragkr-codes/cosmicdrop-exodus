@@ -8,8 +8,12 @@ const Div = styled.div`
   left: 50vw;
   z-index: 888;
   transform: translate(-50%, -50%);
-  padding: 2rem 4rem;
+  padding: 2rem 3vw;
   border-radius: 6px;
+
+  @media (max-width: 41.25em) {
+    /* width: 90vw; */
+  }
 
   ${({ category }) => {
     switch (category) {
@@ -45,6 +49,8 @@ const Div = styled.div`
 const H3 = styled.h3`
   color: #000;
   font-size: 6rem;
+  font-size: 4vw;
+  font-size: clamp(3.2rem, 4vw, 6rem);
   font-weight: 500;
   white-space: nowrap;
   margin-bottom: 4vh;
@@ -52,16 +58,28 @@ const H3 = styled.h3`
 const GridDiv = styled.div`
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr;
-  column-gap: 6vw;
+  column-gap: 3.2vw;
   row-gap: 2vh;
+  align-items: center;
+
+  @media (max-width: 41.25em) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2vw;
+  }
 `;
 
 const DivProductName = styled.div`
   font-size: 3rem;
+  font-size: clamp(2.2rem, 2vw, 3rem);
   white-space: nowrap;
+  @media (max-width: 41.25em) {
+    grid-column: span 3;
+    white-space: normal;
+  }
 `;
 const DivProductPrice = styled.div`
   font-size: 3rem;
+  font-size: clamp(2.2rem, 2vw, 3rem);
   white-space: nowrap;
 `;
 
@@ -70,14 +88,15 @@ const Select = styled.select`
   width: 8rem;
   text-align: center;
   cursor: pointer;
-  font-size: 2.2rem;
+  font-size: clamp(1.8rem, 1.4vw, 2.2rem);
   color: #012a4a;
+  align-self: stretch;
 `;
 
 const Button = styled.div`
   font-size: 2rem;
+  font-size: clamp(1.8rem, 1.4vw, 2.2rem);
   color: #012a4a;
-  font-weight: 500;
   background-color: #fff;
   padding: 1rem 2rem;
   border-radius: 2.4rem;
@@ -118,6 +137,8 @@ function Product({ category, product, onAddToCart }) {
   };
 
   const handleAddToCart = function () {
+    if (quantity === 0) return;
+
     const cartItem = {
       category,
       id: product.id,
