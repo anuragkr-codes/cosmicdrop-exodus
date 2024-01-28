@@ -62,8 +62,12 @@ const CTAButton = styled.div`
   align-items: center;
   gap: 1rem;
 
-  span {
+  a:link,
+  a:visited {
     white-space: nowrap;
+    color: inherit;
+    white-space: nowrap;
+    text-decoration: none;
   }
 
   transition: background-color 0.2s;
@@ -109,7 +113,7 @@ export default function CTAEnd() {
       <ButtonDiv>
         <ButtonBox>
           <CTAButton className="btn-cta">
-            <span>Shop now</span> <MdOutlineArrowOutward />
+            <a href="#products">Shop now</a> <MdOutlineArrowOutward />
           </CTAButton>
         </ButtonBox>
       </ButtonDiv>

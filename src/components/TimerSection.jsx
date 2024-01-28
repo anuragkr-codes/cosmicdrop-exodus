@@ -134,11 +134,15 @@ const CTAButton = styled.div`
   align-items: center;
   gap: 1rem;
 
-  span {
-    white-space: nowrap;
-  }
-
   transition: background-color 0.2s;
+
+  a:link,
+  a:visited {
+    white-space: nowrap;
+    color: inherit;
+    white-space: nowrap;
+    text-decoration: none;
+  }
 
   cursor: pointer;
   &:hover {
@@ -248,7 +252,7 @@ export default function TimerSection() {
       <ButtonDiv>
         <ButtonBox>
           <CTAButton className="btn-cta">
-            <span>Something missing</span> <MdOutlineArrowOutward />
+            <a href="#">Something missing</a> <MdOutlineArrowOutward />
           </CTAButton>
         </ButtonBox>
       </ButtonDiv>

@@ -157,8 +157,11 @@ const CTAButton = styled.div`
   align-items: center;
   gap: 1rem;
 
-  span {
+  a:link,
+  a:visited {
+    color: inherit;
     white-space: nowrap;
+    text-decoration: none;
   }
 
   transition: background-color 0.2s;
@@ -227,7 +230,7 @@ export default function Landing() {
       <ButtonDiv>
         <ButtonBox>
           <CTAButton>
-            <span>Not anymore</span> <MdOutlineArrowOutward />
+            <a href="#products">Not anymore</a> <MdOutlineArrowOutward />
           </CTAButton>
         </ButtonBox>
       </ButtonDiv>

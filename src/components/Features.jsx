@@ -36,6 +36,7 @@ const H2 = styled.h2`
   font-size: clamp(3.4rem, 6vw, 6rem);
   font-weight: 500;
   color: #fff;
+  padding-left: 1rem;
 `;
 
 export default function Features({ productsData, cart, onAddToCart }) {
