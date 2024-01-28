@@ -68,33 +68,17 @@ const HeroTextDiv = styled.div`
   color: #fff;
 
   /* background: linear-gradient(
-    151deg,
-    rgba(255, 221, 170, 0.9697128851540616) 27%,
-    rgba(167, 255, 241, 0.9753151260504201) 50%,
-    rgba(255, 155, 244, 0.9220938375350141) 75%
+    90deg,
+    rgba(255, 198, 111, 0.8) 14%,
+    rgba(50, 100, 140, 1) 30%,
+    rgba(255, 198, 111, 0.8) 48%,
+    rgba(50, 100, 140, 1) 67%,
+    rgba(255, 198, 111, 0.8) 83%
   ); */
-  /* background: linear-gradient(
-    151deg,
-    rgba(4, 253, 238, 0.8408613445378151) 27%,
-    rgba(84, 131, 215, 0.8576680672268908) 50%,
-    rgba(138, 49, 200, 0.8716736694677871) 75%
-  ); */
-  /* background: linear-gradient(
-    151deg,
-    rgba(255, 173, 49, 1) 27%,
-    rgba(238, 70, 211, 1) 50%,
-    rgba(144, 124, 255, 1) 75%
-  ); */
-  background: linear-gradient(
-    151deg,
-    rgba(255, 173, 49, 0.8156512605042017) 27%,
-    rgba(238, 70, 211, 0.9136904761904762) 50%,
-    rgba(144, 124, 255, 0.9557072829131653) 75%
-  );
-  background-clip: text;
-  color: transparent;
-  background-size: 300%;
-  animation: ${bgAnimation} 6s infinite alternate;
+  /* background-clip: text; */
+  /* color: transparent; */
+  /* background-size: 400%;
+  animation: ${bgAnimation} 10s infinite alternate linear; */
 `;
 
 const show = keyframes`

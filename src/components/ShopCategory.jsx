@@ -47,8 +47,6 @@ const Div = styled.div`
 
 const H3 = styled.h3`
   color: #000;
-  font-size: 6rem;
-  font-size: 4vw;
   font-size: clamp(3.2rem, 4vw, 6rem);
   font-weight: 500;
   white-space: nowrap;
@@ -64,6 +62,10 @@ const H3 = styled.h3`
     scale: 1.2;
     cursor: pointer;
     color: #fff;
+    transition: color 0.2s ease;
+    &:hover {
+      color: #000;
+    }
   }
 `;
 
@@ -114,6 +116,12 @@ const Button = styled.div`
   border-radius: 2.4rem;
   cursor: pointer;
   white-space: nowrap;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+    color: #000;
+  }
 `;
 
 export default function ShopCategory({

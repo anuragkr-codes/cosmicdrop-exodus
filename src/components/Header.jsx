@@ -28,7 +28,7 @@ const HeaderElement = styled.header`
   transition: background-color 0.1s ease;
 
   @media (max-width: 41.25em) {
-    padding: 4.4rem 2rem;
+    padding: 4.4rem 2rem 3.2rem 2rem;
   }
 
   .cart-link {

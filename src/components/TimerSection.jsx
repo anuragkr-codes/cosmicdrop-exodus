@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import Overlay from "./Overlay";
+import RequestProductForm from "./RequestProductForm";
 
 import { useEffect, useState } from "react";
 
@@ -136,12 +138,8 @@ const CTAButton = styled.div`
 
   transition: background-color 0.2s;
 
-  a:link,
-  a:visited {
+  span {
     white-space: nowrap;
-    color: inherit;
-    white-space: nowrap;
-    text-decoration: none;
   }
 
   cursor: pointer;
@@ -171,6 +169,7 @@ export default function TimerSection() {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
+  const [showProductForm, setShowProductForm] = useState(false);
 
   useEffect(() => {
     const currentHour = new Date().getHours();
@@ -215,8 +214,18 @@ export default function TimerSection() {
 
     return () => clearInterval(interval);
   }, []);
+
+  function handleShowProductForm() {
+    setShowProductForm((s) => !s);
+  }
   return (
     <Section id="next-delivery">
+      {showProductForm && (
+        <>
+          <Overlay zIndex={777} onClick={handleShowProductForm} />
+          <RequestProductForm onClose={handleShowProductForm} />
+        </>
+      )}
       <Div>
         <DivTimer>
           <PTimer>Our next drop in </PTimer>
@@ -252,7 +261,8 @@ export default function TimerSection() {
       <ButtonDiv>
         <ButtonBox>
           <CTAButton className="btn-cta">
-            <a href="#">Something missing</a> <MdOutlineArrowOutward />
+            <span onClick={handleShowProductForm}>Something missing</span>
+            <MdOutlineArrowOutward />
           </CTAButton>
         </ButtonBox>
       </ButtonDiv>

@@ -47,7 +47,7 @@ export default function Features({
 }) {
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const handleSelectedCategory = function (category) {
+  const handleSelectedCategory = function (category = "") {
     setSelectedCategory(category);
   };
 

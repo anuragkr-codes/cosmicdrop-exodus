@@ -12,5 +12,5 @@ const Div = styled.div`
 `;
 
 export default function Overlay({ onClick, zIndex = 555 }) {
-  return <Div zIndex={zIndex} onClick={() => onClick("")}></Div>;
+  return <Div zIndex={zIndex} onClick={() => onClick()}></Div>;
 }
