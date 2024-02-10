@@ -118,7 +118,7 @@ export default function CTAEnd() {
         </ButtonBox>
       </ButtonDiv>
       <Footer>
-        Made with ❤️ in Manipal, by team <code>&lt;DevTitans /&gt;</code>
+        <code>Made with ❤️ in Manipal, by team DevTitans</code>
       </Footer>
     </Section>
   );
